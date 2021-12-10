@@ -196,12 +196,12 @@ class RouteServiceProvider extends ServiceProvider
    *
    * @return void
    */
-  protected function mapInstallRoutes()
-  {
-    Route::middleware('web')
-       ->namespace($this->namespace)
-       ->group(base_path('routes/install.php'));
-  }
+  // protected function mapInstallRoutes()
+  // {
+  //   Route::middleware('web')
+  //      ->namespace($this->namespace)
+  //      ->group(base_path('routes/install.php'));
+  // }
 
   /**
    * Define the "web" routes for the application.
