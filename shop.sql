@@ -1507,8 +1507,7 @@ CREATE TABLE `seo_settings` (
 -- Dumping data for table `seo_settings`
 --
 
-INSERT INTO `seo_settings` (`id`, `keyword`, `author`, `revisit`, `sitemap_link`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'bootstrap,responsive,template,developer', 'Active IT Zone', 11, 'https://www.activeitzone.com', 'Active E-commerce CMS Multi vendor system is such a platform to build a border less marketplace both for physical and digital goods.', '2019-08-08 08:56:11', '2019-08-08 02:56:11');
+
 
 -- --------------------------------------------------------
 

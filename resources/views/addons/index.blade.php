@@ -92,70 +92,8 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript">
-        function updateStatus(el, id){
-            if($(el).is(':checked')){
-                var status = 1;
-            }
-            else{
-                var status = 0;
-            }
-            $.post('{{ route('addons.activation') }}', {_token:'{{ csrf_token() }}', id:id, status:status}, function(data){
-                if(data == 1){
-                    showAlert('success', 'Status updated successfully');
-                }
-                else{
-                    showAlert('danger', 'Something went wrong');
-                }
-            });
-        }
+  
 
-        $(document).ready(function(){
-            $.post('https://activeitzone.com/addons/public/addons', {item: 'ecommerce'}, function(data){
-                //console.log(data);
-                html = '';
-                data.forEach((item, i) => {
-                    if(item.link != null){
-                        html += `<div class="col-lg-4 col-md-6 ">
-                                    <div class="panel addon-panel">
-                                        <div class="panel-header">
-                                            <a href="${item.link}" target="_blank"><img class="img-responsive" src="${item.image}" alt="Image"></a>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="media-block mar-btm"><a class="h4 mar-top d-flex" href="${item.link}" target="_blank">${item.name}</a>
-                                                <div class="rating rating-lg mar-btm"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i></div>
-                                                <p class="mar-no text-truncate-3">${item.short_description}</p>
-                                            </div>
-                                            <div class="blog-footer pad-top">
-                                                <div class="media-left text-success text-2x">$${item.price}</div>
-                                                <div class="media-body text-right"><a href="${item.link}" target="_blank" class="btn btn-outline btn-default">Preview</a><a href="${item.purchase}" target="_blank" class="btn btn-outline btn-primary">Purchase</a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>`;
-                    }
-                    else {
-                        html += `<div class="col-lg-4 col-md-6 ">
-                                    <div class="panel addon-panel">
-                                        <div class="panel-header">
-                                            <a><img class="img-responsive" src="${item.image}" alt="Image"></a>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="media-block mar-btm"><a class="h4 mar-top d-flex" >${item.name}</a>
-                                                <div class="rating rating-lg mar-btm"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i></div>
-                                                <p class="mar-no text-truncate-3">${item.short_description}</p>
-                                            </div>
-                                            <div class="blog-footer pad-top ">
-                                                <div class="media-body text-center"><div class="btn btn-outline btn-primary">Coming Soon</div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>`;
-                    }
-
-                });
-                $('#available-addons-content').html(html);
-            });
-        })
-    </script>
+     
+  
 @endsection
